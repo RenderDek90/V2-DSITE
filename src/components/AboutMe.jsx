@@ -188,7 +188,7 @@ const AboutMe = ({ data, isPending, error }) => {
               })}
         </div>
         <div className="w-full relative py-5">
-          <Link to="/portfolio" className="absolute right-10 hover:text-cyan-500 duration-300 ease-in-out hover:scale-105" onClick={scrollToTop}>
+          <Link to="/V2-DSITE/portfolio" className="absolute right-10 hover:text-cyan-500 duration-300 ease-in-out hover:scale-105" onClick={scrollToTop}>
             <span>see my portfolio ---{'>'}</span>
           </Link>
         </div>
