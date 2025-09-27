@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c57ebd34.css",
-    "main.js": "/static/js/main.217e3792.js",
+    "main.js": "/static/js/main.f9e2f6d8.js",
     "static/media/MukaDardar3.png": "/static/media/MukaDardar3.13e171d618f249160c75.png",
     "static/media/logo-uniair.png": "/static/media/logo-uniair.c4a7541e4579b13b13c7.png",
     "static/media/background-rpof.png": "/static/media/background-rpof.027c6660419a49d91c6f.png",
@@ -21,10 +21,10 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/index.html",
     "main.c57ebd34.css.map": "/static/css/main.c57ebd34.css.map",
-    "main.217e3792.js.map": "/static/js/main.217e3792.js.map"
+    "main.f9e2f6d8.js.map": "/static/js/main.f9e2f6d8.js.map"
   },
   "entrypoints": [
     "static/css/main.c57ebd34.css",
-    "static/js/main.217e3792.js"
+    "static/js/main.f9e2f6d8.js"
   ]
 }
