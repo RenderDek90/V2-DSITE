@@ -58,42 +58,50 @@ const skillSets = [
   },
   {
     id: 10,
-    name: 'Flutter',
+    name: 'NodeJS',
   },
   {
     id: 11,
-    name: 'Python',
+    name: 'NextJS',
   },
   {
     id: 12,
-    name: 'Git',
+    name: 'Flutter',
   },
   {
     id: 13,
-    name: 'Figma',
+    name: 'Python',
   },
   {
     id: 14,
-    name: 'Canva',
+    name: 'Git',
   },
   {
     id: 15,
-    name: 'Adobe Photoshop',
+    name: 'Figma',
   },
   {
     id: 16,
-    name: 'Adobe Illustrator',
+    name: 'Canva',
   },
   {
     id: 17,
-    name: 'Adobe Premiere Pro',
+    name: 'Adobe Photoshop',
   },
   {
     id: 18,
-    name: 'Adobe After Effects',
+    name: 'Adobe Illustrator',
   },
   {
     id: 19,
+    name: 'Adobe Premiere Pro',
+  },
+  {
+    id: 20,
+    name: 'Adobe After Effects',
+  },
+  {
+    id: 21,
     name: '3D Blender',
   },
 ];
@@ -129,24 +137,26 @@ const AboutMe = ({ data, isPending, error }) => {
               </div>
             </div>
             <div className="my-1 sm:my-3">
-              <span className="font-bold text-3xl">I'm a Web Developer</span>
+              <span className="font-bold text-3xl">I'm a RPA Technical Lead</span>
               <div className="mt-2 h-[2px] w-[50%] bg-white"></div>
               <div className="mt-1 h-[2px] w-20 bg-white"></div>
               <p className="mt-5">
                 Graduated from{' '}
                 <a href="https://binus.ac.id/" target="_blank" className="text-cyan-500 hover:underline">
-                  Bina Nusantara University
+                    Bina Nusantara University
                 </a>{' '}
                 majoring in{' '}
-                <a href="#computer" className="text-cyan-500  hover:underline">
-                  Computer Science{' '}
-                </a>
-                at 2024. My passion for learning constantly drives me to explore new horizons and expand my skill set. Having an experience in Designing helps me to pursue in making a creative website. Combining creativity and other ability
-                is such an interesting discovery.
-              </p>
+                <a href="#computer" className="text-cyan-500 hover:underline">
+                    Computer Science
+                </a>{' '}
+                in 2024. Currently working as an <span className="font-semibold">RPA Technical Lead</span>, 
+                where I lead automation initiatives and integrate RPA with AI-driven solutions. 
+                My passion for continuous learning drives me to explore new technologies, 
+                from web development to intelligent automation. With a background in design, 
+                I enjoy building creative and user-focused solutions that combine {" "}
+                <span className="italic">creativity</span> and <span className="italic">technology</span>.
+                </p>
               <br />
-              {/* <p>When I'm not on a computer: </p>
-              <p className="text-md">I would play music instruments, play basketball, table-tennis, hangout with friends and family</p> */}
             </div>
           </div>
         </div>
@@ -185,7 +195,7 @@ const AboutMe = ({ data, isPending, error }) => {
       </section>
 
       {/* Story */}
-      <section className="sm:p-10 px-2 py-5 h-100 lg:max-h-screen bg-white text-black" id="story">
+      {/* <section className="sm:p-10 px-2 py-5 h-100 lg:max-h-screen bg-white text-black" id="story">
         <p className="text-center text-3xl font-bold">My Story</p>
         <div className="bg-cyan-500 h-[2px] w-40 mx-auto mt-2"></div>
 
@@ -231,7 +241,7 @@ const AboutMe = ({ data, isPending, error }) => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Experience */}
       <section className="p-10 max-w-[90%] mx-auto h-fit bg-white text-black" id="experience">
@@ -243,24 +253,36 @@ const AboutMe = ({ data, isPending, error }) => {
           <img src={logoUniair} alt="" className="rounded-full p-5 mx-auto shadow-black shadow w-auto h-[150px] sm:my-0 my-2" />
           <div>
             <p className="font-bold text-2xl">PT Uniair Cargo</p>
-            <p className="font-medium text-xl">Web Developer</p>
+            <p className="font-medium text-xl">Web Developer Intern → RPA Technical Lead</p>
             <p className="font-light italic">Feb 2023 - present</p>
             <br />
             <li className="pt-2">
-              Worked in a team to develop a company website, which engaged with high-quality sites for designated projects, manage and maintain the website, enhance, and update for improvements, monitor the website to runs smoothly,
-              effectively, and user friendly, while also look great on every screen, from desktop to mobile gadgets.
+            Developed and maintained the company website, ensuring responsive design,
+            smooth performance, and user-friendly experience across all devices.
             </li>
             <li className="pt-2">
-              Specifically, one of my individual responsibilities is to build Robotic Process Automation (RPA) programs to help improve other departments. By using the applied programs, other departments could now complete their tasks more
-              efficiently by more than 50% faster than the average time.
+            Built and deployed <strong>Robotic Process Automation (RPA)</strong> programs,
+            reducing task completion time in multiple departments by <strong>50%+</strong>.
             </li>
-            <li className="pt-2">Collaborated with sister companies on RPA projects to help improve their effectiveness on working with documents.</li>
+            <li className="pt-2">
+            Collaborated with sister companies on automation projects to streamline 
+            document workflows and increase efficiency.
+            </li>
+            <li className="pt-2">
+            As <strong>RPA Technical Lead</strong>, directed automation initiatives, 
+            provided technical guidance to the development team, and ensured solutions 
+            aligned with company goals.
+            </li>
+            <li className="pt-2">
+            Coordinated with multiple departments to identify automation opportunities, 
+            define requirements, and oversee successful project delivery.
+            </li>
             <div className="skill-include-phone md:skill-include mt-5">
               <p>Laravel</p>
-              <p>Flask</p>
+              <p>NodeJS</p>
+              <p>NextJS</p>
+              <p>Python (Flask | FastAPI)</p>
               <p>UIBot Creator</p>
-              <p>JQuery</p>
-              <p>Ajax</p>
             </div>
           </div>
         </div>
