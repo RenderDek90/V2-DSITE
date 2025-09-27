@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 const TypedText = () => {
-  const textArray = ['Web Developer', '2D/3D Designer', 'Video Editor'];
+  const textArray = ['RPA Tech Lead', 'Web Developer', '2D/3D Designer', 'Video Editor'];
   const elementRef = useRef(null);
 
   useEffect(() => {

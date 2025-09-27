@@ -28,6 +28,7 @@ const Home = ({ data, isPending, error }) => {
             <div className="flex flex-row sm:justify-start justify-center items-center sm:mt-5 mt-2">
               <hr className="text-white" />
               <p className="text-center">
+                <span className="hover:text-cyan-500 hover:underline hover:cursor-default duration-300 ease-in-out">RPA Tech Lead</span> |{' '}
                 <span className="hover:text-cyan-500 hover:underline hover:cursor-default duration-300 ease-in-out">Web Developer</span> |{' '}
                 <span className="hover:text-cyan-500 hover:underline hover:cursor-default duration-300 ease-in-out">Graphics Designer</span> |{' '}
                 <span className="hover:text-cyan-500 hover:underline hover:cursor-default duration-300 ease-in-out">Video Editor</span>{' '}
