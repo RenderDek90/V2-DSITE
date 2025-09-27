@@ -40,13 +40,13 @@ const Navbar = () => {
             />
             <div className="absolute mt-5 w-full left-0 ease-in-out duration-200 rounded-sm" id="menu-bar-pop">
               <ul className="flex flex-col text-center w-full text-left bg-[#202020] shadow-blue-500 shadow rounded-lg py-2 ease-in-out duration-200">
-                <Link to="/" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
+                <Link to="/V2-DSITE" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
                   Home
                 </Link>
-                <Link to="/about-me" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
+                <Link to="/V2-DSITE/about-me" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
                   About Me
                 </Link>
-                <Link to="/portfolio" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
+                <Link to="/V2-DSITE/portfolio" className="hover:font-bold hover:bg-blue-500 duration-300 ease-in-out text-white py-2">
                   Portfolio
                 </Link>
               </ul>
@@ -55,13 +55,13 @@ const Navbar = () => {
         </ul>
 
         <ul className="navbar">
-          <Link to="/" className="hover:text-blue-400 duration-300 ease-in-out">
+          <Link to="/V2-DSITE" className="hover:text-blue-400 duration-300 ease-in-out">
             Home
           </Link>
-          <Link to="/about-me" className="hover:text-blue-400 duration-300 ease-in-out">
+          <Link to="/V2-DSITE/about-me" className="hover:text-blue-400 duration-300 ease-in-out">
             About Me
           </Link>
-          <Link to="/portfolio" className="hover:text-blue-400 duration-300 ease-in-out">
+          <Link to="/V2-DSITE/portfolio" className="hover:text-blue-400 duration-300 ease-in-out">
             Portfolio
           </Link>
         </ul>

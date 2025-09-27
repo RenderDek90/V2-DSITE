@@ -21,9 +21,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home data={data} isPending={isPending} error={error} />}></Route>
-          <Route path="/about-me" element={<AboutMe data={data} isPending={isPending} error={error} />}></Route>
-          <Route path="/portfolio" element={<Portfolio />}></Route>
+          <Route exact path="/V2-DSITE" element={<Home data={data} isPending={isPending} error={error} />}></Route>
+          <Route path="/V2-DSITE/about-me" element={<AboutMe data={data} isPending={isPending} error={error} />}></Route>
+          <Route path="/V2-DSITE/portfolio" element={<Portfolio />}></Route>
           {/* <Route path="/testAPI" element={<TestAPI />}></Route> */}
         </Routes>
       </div>
