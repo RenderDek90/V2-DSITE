@@ -1,15 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
       colors: {
-        'cyber-black': '#0a0a0b',
-        'cyber-darker': '#050505',
-        'neon-cyan': '#00f3ff',
-        'neon-pink': '#ff003c',
+        // We'll keep semantic names but redefine them for glassmorphism
+        'cyber-black': 'var(--bg-primary)',
+        'cyber-darker': 'var(--bg-secondary)',
+        'neon-cyan': 'var(--accent-primary)',
+        'neon-pink': 'var(--accent-secondary)',
         'neon-yellow': '#fcee0a',
-        'neon-purple': '#b026ff',
+        'neon-purple': 'var(--accent-tertiary)',
+        'glass-border': 'var(--glass-border)',
+        'glass-bg': 'var(--glass-bg)',
       },
       fontFamily: {
         sans: ['ui-sans-serif', 'system-ui'],
@@ -20,17 +24,13 @@ module.exports = {
       },
       backgroundImage: {
         prof: "url('./images/background-rpof.png')",
-        'cyber-grid': "linear-gradient(transparent 95%, #00f3ff 100%), linear-gradient(90deg, transparent 95%, #00f3ff 100%)",
+        // Abstract gradient background instead of grid
+        'glass-gradient': 'var(--bg-gradient)',
       },
       boxShadow: {
-        'neon-cyan': '0 0 10px #00f3ff, 0 0 20px #00f3ff',
-        'neon-pink': '0 0 10px #ff003c, 0 0 20px #ff003c',
-        'neon-purple': '0 0 10px #b026ff, 0 0 20px #b026ff',
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
+        'glass-hover': '0 8px 32px 0 rgba(31, 38, 135, 0.3)',
       },
-      dropShadow: {
-        'neon-cyan': '0 0 10px rgba(0, 243, 255, 0.8)',
-        'neon-pink': '0 0 10px rgba(255, 0, 60, 0.8)',
-      }
     },
   },
   plugins: [],
