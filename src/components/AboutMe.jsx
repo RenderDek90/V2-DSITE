@@ -7,6 +7,7 @@ import logoHK from '../images/healthkathon-logo.png';
 import logoUniair from '../images/logo-uniair.png';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
+import { motion } from 'framer-motion';
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -108,19 +109,57 @@ const skillSets = [
 
 const AboutMe = ({ data, isPending, error }) => {
   data = skillSets;
+
+  const pageVariants = {
+    initial: { opacity: 0, x: -20 },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: 20 },
+  };
+
+  const staggerSkills = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const skillItem = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <>
+    <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={{ duration: 0.4 }} className="bg-cyber-black overflow-hidden">
       {/* Up */}
-      <section className="w-100 flex flex-row justify-center items-center bg-gradient-to-r from-[#202020] to-[#101010] p-10 min-h-screen">
-        <div className="mt-10 block text-white text-center max-w-[70vw]">
+      <section className="w-100 flex flex-row justify-center items-center relative min-h-screen">
+        {/* Abstract Cyberpunk Background Elements */}
+        <div className="absolute inset-0 bg-cyber-grid opacity-10 pointer-events-none z-0 mix-blend-screen"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-neon-purple rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-neon-cyan rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+
+        <div className="mt-10 block text-white text-center max-w-[70vw] relative z-10">
           <div className="py-12" id="me">
             <p className="text-6xl font-bold">I'm Darren.</p>
           </div>
           <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 sm:gap-5 text-left items-center p-5" id="head-section">
-            <div className="w-100 md:pb-0 pb-6">
-              <div className="w-fit bg-cyan-500 mx-auto shadow-lg shadow-cyan-400 picture-div">
-                <img src={imageProfile} alt="" className="profile h-[300px] md:h-[400px] mx-2 my-4 shadow-md shadow-gray-800" />
-                <div className="bg-[#151515] h-[80px] flex flex-row justify-center items-center gap-4 sm:gap-5" style={{ borderBottomLeftRadius: '2em', borderBottomRightRadius: '2em' }}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ duration: 0.7, ease: "easeOut" }} 
+              className="w-100 md:pb-0 pb-6"
+            >
+              <div className="w-fit bg-[#050505] mx-auto picture-div cyber-card relative group">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neon-cyan opacity-20 pointer-events-none"></div>
+                <img src={imageProfile} alt="" className="profile h-[300px] md:h-[400px] mx-2 my-4 relative z-10 border border-gray-800 group-hover:border-neon-cyan transition-colors duration-300" />
+                <div className="bg-[#111] h-[80px] flex flex-row justify-center items-center gap-4 sm:gap-5 relative z-10 border-t border-gray-800 group-hover:border-neon-cyan transition-colors duration-300" style={{ borderBottomLeftRadius: '2em', borderBottomRightRadius: '2em' }}>
                   <Link to="https://www.instagram.com/darrenezra_/" target="_blank" className="text-2xl hover:scale-110 duration-300 ease-in-out hover:text-fuchsia-400">
                     <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
                   </Link>
@@ -135,11 +174,16 @@ const AboutMe = ({ data, isPending, error }) => {
                   </Link>
                 </div>
               </div>
-            </div>
-            <div className="my-1 sm:my-3">
-              <span className="font-bold text-3xl">I'm a RPA Technical Lead</span>
-              <div className="mt-2 h-[2px] w-[50%] bg-white"></div>
-              <div className="mt-1 h-[2px] w-20 bg-white"></div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }} 
+              className="my-1 sm:my-3"
+            >
+              <span className="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple tracking-widest uppercase text-glow-cyan">I'm a RPA Technical Lead</span>
+              <div className="mt-2 h-[2px] w-[50%] bg-neon-cyan shadow-[0_0_10px_#00f3ff]"></div>
+              <div className="mt-1 h-[2px] w-20 bg-neon-pink shadow-[0_0_10px_#ff003c]"></div>
               <p className="mt-5">
                 Graduated from{' '}
                 <a href="https://binus.ac.id/" target="_blank" className="text-cyan-500 hover:underline">
@@ -157,17 +201,25 @@ const AboutMe = ({ data, isPending, error }) => {
                 <span className="italic">creativity</span> and <span className="italic">technology</span>.
                 </p>
               <br />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Skills */}
-      <section className="p-10 h-100 bg-[#252525] text-white" id="skillset">
-        <p className="text-center text-3xl font-bold">Skillset</p>
-        <div className="bg-cyan-500 h-[2px] w-40 mx-auto"></div>
+      <section className="p-10 min-h-screen bg-[#050505] text-white relative border-t border-gray-800" id="skillset">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-10">
+          <p className="text-center text-3xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Skillset</p>
+          <div className="bg-neon-cyan h-[2px] w-40 mx-auto mt-2 shadow-[0_0_10px_#00f3ff]"></div>
+        </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 mx-auto sm:max-w-[80%] max-w-full my-12">
+        <motion.div 
+          variants={staggerSkills} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap items-center justify-center gap-3 mx-auto sm:max-w-[80%] max-w-full my-12"
+        >
           {/* {isPending && <div>Loading...</div>} */}
           {/* {error && <div>Error catch API..</div>} */}
           {data &&
@@ -181,12 +233,16 @@ const AboutMe = ({ data, isPending, error }) => {
                 if (medLevel.includes(skill.id)) hover = 'hover:bg-yellow-500';
 
                 return (
-                  <div className={`px-4 py-2 rounded-lg bg-[#131313] ${hover} duration-300 ease-in-out text-white hover:cursor-default hover:scale-110 hover:font-bold`} key={skill.id}>
+                  <motion.div 
+                    variants={skillItem}
+                    className={`px-4 py-2 rounded-sm border border-gray-700 bg-black hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,243,255,0.4)] hover:text-neon-cyan duration-300 ease-in-out text-gray-300 hover:cursor-crosshair font-mono`} 
+                    key={skill.id}
+                  >
                     <p>{skill.name}</p>
-                  </div>
+                  </motion.div>
                 );
               })}
-        </div>
+        </motion.div>
         <div className="w-full relative py-5">
           <Link to="/V2-DSITE/portfolio" className="absolute right-10 hover:text-cyan-500 duration-300 ease-in-out hover:scale-105" onClick={scrollToTop}>
             <span>see my portfolio ---{'>'}</span>
@@ -244,17 +300,20 @@ const AboutMe = ({ data, isPending, error }) => {
       </section> */}
 
       {/* Experience */}
-      <section className="p-10 max-w-[90%] mx-auto h-fit bg-white text-black" id="experience">
-        <p className="text-center text-3xl font-bold">Experiences</p>
-        {/* <hr className="mt-2" /> */}
-        <div className="bg-cyan-500 h-[2px] w-40 mx-auto mt-2"></div>
+      <section className="p-10 max-w-[90%] mx-auto h-fit bg-[#050505] text-white border-t border-gray-800 relative" id="experience">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-neon-purple rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <p className="text-center text-3xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-cyan">Experiences</p>
+          <div className="bg-neon-purple h-[2px] w-40 mx-auto mt-2 shadow-[0_0_10px_#b026ff]"></div>
+        </motion.div>
 
-        <div className="sm:p-12 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center">
-          <img src={logoUniair} alt="" className="rounded-full p-5 mx-auto shadow-black shadow w-auto h-[150px] sm:my-0 my-2" />
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="sm:p-12 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center cyber-card bg-[#111] my-10 relative">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50"></div>
+          <img src={logoUniair} alt="" className="rounded-full p-5 mx-auto bg-black border border-neon-cyan shadow-[0_0_15px_rgba(0,243,255,0.3)] w-auto h-[150px] sm:my-0 my-2" />
           <div>
-            <p className="font-bold text-2xl">PT Uniair Cargo</p>
-            <p className="font-medium text-xl">Web Developer Intern → RPA Technical Lead</p>
-            <p className="font-light italic">Feb 2023 - present</p>
+            <p className="font-bold text-2xl text-neon-cyan">PT Uniair Cargo</p>
+            <p className="font-medium text-xl text-gray-300">Web Developer Intern <span className="text-neon-pink">→</span> RPA Technical Lead</p>
+            <p className="font-mono text-sm text-neon-pink mt-1">Feb 2023 - present</p>
             <br />
             <li className="pt-2">
             Developed and maintained the company website, ensuring responsive design,
@@ -285,14 +344,15 @@ const AboutMe = ({ data, isPending, error }) => {
               <p>UIBot Creator</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="sm:p-10 sm:py-5 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center">
-          <img src={logoHK} alt="" className="rounded-full p-5 mx-auto shadow-black shadow w-auto h-[150px] sm:my-0 my-2" />
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="sm:p-10 sm:py-5 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center cyber-card bg-[#111] my-10 relative border-l-[4px] border-neon-pink">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-pink to-transparent opacity-50"></div>
+          <img src={logoHK} alt="" className="rounded-full p-5 mx-auto bg-black border border-neon-pink shadow-[0_0_15px_rgba(255,0,60,0.3)] w-auto h-[150px] sm:my-0 my-2" />
           <div>
-            <p className="font-bold text-2xl">Healthkathon 2023</p>
-            <p className="font-medium text-xl">Full Stack Developer</p>
-            <p className="font-light italic">Sep 2023 - Nov 2023</p>
+            <p className="font-bold text-2xl text-neon-pink">Healthkathon 2023</p>
+            <p className="font-medium text-xl text-gray-300">Full Stack Developer</p>
+            <p className="font-mono text-sm text-neon-cyan mt-1">Sep 2023 - Nov 2023</p>
             <br />
             <p>
               Participating as a team in a Hackathon event in 2023, we engaged in a competition involving an innovative artificial intelligence project related to the BPJS Kesehatan application. Addressing real-life feedback and events
@@ -305,14 +365,15 @@ const AboutMe = ({ data, isPending, error }) => {
               <p>Canva</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="sm:p-10 sm:py-5 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center">
-          <img src="https://student-activity.binus.ac.id/himti/wp-content/uploads/sites/13/2017/01/LOGO-HIMTI-150x150.png" alt="" className="rounded-full p-5 mx-auto shadow-black shadow h-[150px] w-auto sm:my-0 my-2" />
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="sm:p-10 sm:py-5 py-10 grid lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-6 items-center cyber-card bg-[#111] my-10 relative border-l-[4px] border-neon-purple">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-purple to-transparent opacity-50"></div>
+          <img src="https://student-activity.binus.ac.id/himti/wp-content/uploads/sites/13/2017/01/LOGO-HIMTI-150x150.png" alt="" className="rounded-full p-5 mx-auto bg-black border border-neon-purple shadow-[0_0_15px_rgba(176,38,255,0.3)] h-[150px] w-auto sm:my-0 my-2" />
           <div>
-            <p className="font-bold text-2xl">HIMTI 2022</p>
-            <p className="font-medium text-xl">Manager of Creative & Design [Alam Sutera - Kemanggisan]</p>
-            <p className="font-light italic">Feb 2022 - Mar 2023</p>
+            <p className="font-bold text-2xl text-neon-purple">HIMTI 2022</p>
+            <p className="font-medium text-xl text-gray-300">Manager of Creative & Design [Alam Sutera - Kemanggisan]</p>
+            <p className="font-mono text-sm text-neon-cyan mt-1">Feb 2022 - Mar 2023</p>
             <br />
             <p>Manage a Creative and Design team, and worked with other division. But mostly worked with Web Development Team to achieve a successfull and interesting project.</p>
             <div className="skill-include-phone md:skill-include mt-5">
@@ -324,11 +385,11 @@ const AboutMe = ({ data, isPending, error }) => {
               <p>3D Blender</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
-    </>
+    </motion.div>
   );
 };
 
